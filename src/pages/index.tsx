@@ -1,44 +1,21 @@
-import { RefinementList } from 'react-instantsearch-hooks-web';
+import CustomHits from '~/components/common/CustomHit';
+import Pagination from '~/components/common/Pagination';
+import SearchBox from '~/components/common/SearchBox';
 
 export default function Index() {
-  const name = useRef<HTMLInputElement>(null);
-
-  const navigate = useNavigate();
-  const go = () => {
-    if (name.current) navigate(`/hi/${encodeURIComponent(name.current.value)}`);
-  };
-
   return (
-    <div>
-
-      asdasd
-      {/* <div className="i-carbon-campsite text-4xl inline-block" /> */}
-      <RefinementList attribute="brand" />
-      {/* <p>
-        <a rel="noreferrer" href="https://github.com/antfu/vitesse-lite" target="_blank">
-          Vitesse Lite
-        </a>
-      </p>
-      <p>
-        <em className="text-sm op75">Opinionated Vite Starter Template</em>
-      </p>
-
-      <div className="py-4" />
-
-      <input
-        ref={name}
-        id="input"
-        placeholder="What's your name?"
-        type="text"
-        className="px-4 py-2 w-250px text-center bg-transparent outline-none outline-active:none border border-rounded border-gray-200 border-dark:gray-700"
-        onKeyDown={({ key }) => key === 'Enter' && go()}
-      />
-
-      <div>
-        <button className="m-3 text-sm btn" disabled={!name} onClick={() => go()}>
-          Go
-        </button>
-      </div> */}
-    </div>
+    <>
+      <div className="relative bg-container overflow-hidden">
+        <div className="w-full fixed top-0 bg-white shadow-[0_44px_40px_-8px_rgba(15,45,88,0.05)] py-5 px-6">
+          <SearchBox />
+        </div>
+        <div className="mt-[78px] px-20 pt-10 pb-45 overflow-auto max-h-[100vh]">
+          <CustomHits />
+        </div>
+        <div className="w-full fixed bottom-0 bg-white shadow-[0_44px_40px_-8px_rgba(15,45,88,0.05)] py-5 px-6">
+          <Pagination className="pagination" />
+        </div>
+      </div>
+    </>
   );
 }

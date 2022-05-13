@@ -4,7 +4,7 @@ import App from './App';
 import { AppProviders } from './Providers';
 
 import 'uno.css';
-import './styles/main.css';
+import './index.css';
 import '@unocss/reset/tailwind.css';
 
 ReactDOM.render(

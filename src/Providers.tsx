@@ -12,7 +12,7 @@ const searchClient = algoliasearch(appId, searchKey);
 
 export const AppProviders = ({ children }: ProvidersProps) => {
   return (
-    <InstantSearch searchClient={searchClient} indexName={algoliaIndex}>
+    <InstantSearch searchClient={searchClient} indexName={algoliaIndex} routing={true}>
       {children}
     </InstantSearch>
   );

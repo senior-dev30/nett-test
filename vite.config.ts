@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react'
 import Pages from 'vite-plugin-pages'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
+import { presetAttributify, presetTypography, presetUno } from 'unocss'
 
 export default defineConfig({
   resolve: {
@@ -16,7 +17,17 @@ export default defineConfig({
   plugins: [
     // https://github.com/antfu/unocss
     // see unocss.config.ts for config
-    Unocss(),
+    Unocss({
+      presets: [
+        presetAttributify({ /* preset options */ }),
+        presetUno(),
+        presetTypography(),
+      ],
+      rules: [
+        ['bg-container', { background: '#F7F9FB' }],
+        ['text-primary', { color: '#0A2958' }],
+      ]
+    }),
 
     react(),
 
@@ -28,7 +39,6 @@ export default defineConfig({
       imports: [
         'react',
         'react-router-dom',
-        { 'usehooks-ts': ['useCounter', 'useDarkMode'] },
       ],
       dts: true,
     }),

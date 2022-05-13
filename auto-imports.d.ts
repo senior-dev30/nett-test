@@ -9,8 +9,6 @@ declare global {
   const Routes: typeof import('react-router-dom')['Routes']
   const useCallback: typeof import('react')['useCallback']
   const useContext: typeof import('react')['useContext']
-  const useCounter: typeof import('usehooks-ts')['useCounter']
-  const useDarkMode: typeof import('usehooks-ts')['useDarkMode']
   const useEffect: typeof import('react')['useEffect']
   const useHref: typeof import('react-router-dom')['useHref']
   const useInRouterContext: typeof import('react-router-dom')['useInRouterContext']
