@@ -1,0 +1,16 @@
+**/.DS_Store
+**/build
+README.md
+description.html
+**/docs
+**/node_modules
+package-lock.json
+.env
+public/Configs.js
+public/keycloak.json
+**/src/styles
+**/public
+.vscode/settings.json
+jsconfig.json
+*.css
+*.scss
